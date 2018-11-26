@@ -10,20 +10,20 @@ AmbientBeatsLEDAnimations::AmbientBeatsLEDAnimations(SpectrumEqualizerClient *eq
 
 int AmbientBeatsLEDAnimations::nextAnimation() {
     animation++;
-    animation = wrapToRange(animation, 0, animationCount);
+    animation = wrapToRange(animation, 0, animationCount-1);
     clearAllLeds();
     return animation;
 }
 
 int AmbientBeatsLEDAnimations::previousAnimation() {
     animation--;
-    animation = wrapToRange(animation, 0, animationCount);
+    animation = wrapToRange(animation, 0, animationCount-1);
     clearAllLeds();
     return animation;
 }
 
 int AmbientBeatsLEDAnimations::setAnimation(int animationNumber) {
-    animation = wrapToRange(animationNumber, 0, animationCount);
+    animation = wrapToRange(animationNumber, 0, animationCount-1);
     clearAllLeds();
     return animation;
 }
