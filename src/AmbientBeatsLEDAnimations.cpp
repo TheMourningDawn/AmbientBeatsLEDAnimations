@@ -8,6 +8,10 @@ SpectrumEqualizerClient *equalizer;
 
 AmbientBeatsLEDAnimations::AmbientBeatsLEDAnimations(SpectrumEqualizerClient *eq) : equalizer(eq) { }
 
+void AmbientBeatsLEDAnimations::show() {
+    FastLED.show();
+}
+
 int AmbientBeatsLEDAnimations::nextAnimation() {
     animation++;
     animation = wrapToRange(animation, 0, animationCount-1);

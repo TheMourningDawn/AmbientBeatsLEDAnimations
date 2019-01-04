@@ -28,6 +28,8 @@ class AmbientBeatsLEDAnimations
 
     AmbientBeatsLEDAnimations(SpectrumEqualizerClient* eq);
 
+    void show();
+
     void setHue(int newHue);
     void setBrightness(int newBrightness);
     void setSaturation(int newSaturation);
