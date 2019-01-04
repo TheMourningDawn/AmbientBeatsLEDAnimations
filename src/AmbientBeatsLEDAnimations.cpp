@@ -52,6 +52,10 @@ void AmbientBeatsLEDAnimations::setSensitivity(int newSensitivity) {
     sensitivity = newSensitivity;
 }
 
+void AmbientBeatsLEDAnimations::setSpeed(int newSpeed) {
+    speed = newSpeed;
+}
+
 int AmbientBeatsLEDAnimations::nextFrequencyMode() {
     int wrapEnd = frequencyMode[6];
     for (int i = 6; i > 0; i--) {
