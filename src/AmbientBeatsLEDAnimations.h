@@ -23,7 +23,7 @@ class AmbientBeatsLEDAnimations
     int brightness = 255;
     int saturation = 255;
     int speed = 0;
-    int sensitivity = 500;
+    int sensitivity = 720;
 
     uint8_t frequencyMode[7] = {0, 1, 2, 3, 4, 5, 6};
 
