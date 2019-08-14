@@ -15,10 +15,10 @@ class AmbientBeatsLEDAnimations
   public:
     SpectrumEqualizerClient *equalizer;
     bool poweredOn = true;
-    bool audioReactiveOn = true;
+    bool audioReactiveOn = false;
 
     int animationCount;
-    int animation = 0;
+    int animation = 1;
     int hue = 120;
     int brightness = 255;
     int saturation = 255;
