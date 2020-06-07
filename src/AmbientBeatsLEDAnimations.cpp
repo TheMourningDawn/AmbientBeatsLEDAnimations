@@ -56,6 +56,15 @@ void AmbientBeatsLEDAnimations::setSpeed(int newSpeed) {
     speed = newSpeed;
 }
 
+void AmbientBeatsLEDAnimations::setColorLoopSpeed(int newSpeed) {
+    colorLoopSpeed = newSpeed;
+}
+
+bool AmbientBeatsLEDAnimations::toggleColorLoop() {
+  colorLoopOn = !colorLoopOn;
+  return colorLoopOn;
+}
+
 int AmbientBeatsLEDAnimations::nextFrequencyMode() {
     int wrapEnd = frequencyMode[6];
     for (int i = 6; i > 0; i--) {

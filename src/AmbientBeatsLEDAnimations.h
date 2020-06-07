@@ -16,14 +16,16 @@ class AmbientBeatsLEDAnimations
     SpectrumEqualizerClient *equalizer;
     bool poweredOn = true;
     bool audioReactiveOn = false;
+    bool colorLoopOn = false;
 
     int animationCount;
     int animation = 1;
-    int hue = 120;
-    int brightness = 255;
-    int saturation = 255;
-    int speed = 0;
-    int sensitivity = 720;
+    int hue = 120; // 0-255
+    int brightness = 255; // 0-255
+    int saturation = 255; // 0-255
+    int speed = 0; // delay(speed) every loop
+    int sensitivity = 800;
+    int colorLoopSpeed = 20; // hue+=1 every Xms
 
     uint8_t frequencyMode[7] = {0, 1, 2, 3, 4, 5, 6};
 
@@ -36,14 +38,16 @@ class AmbientBeatsLEDAnimations
     void setSaturation(int newSaturation);
     void setSensitivity(int newSensitivity);
     void setSpeed(int newSpeed);
+    void setColorLoopSpeed(int newSpeed);
+
 
     int getAnimation();
     int nextAnimation();
     int previousAnimation();
     int setAnimation(int animationNumber);
     int nextFrequencyMode();
-
     int previousFrequencyMode();
+    bool toggleColorLoop();
 
     virtual int runAnimation() = 0;
     virtual int toggleAudioReactive() = 0;
