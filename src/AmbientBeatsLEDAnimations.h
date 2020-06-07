@@ -26,6 +26,8 @@ class AmbientBeatsLEDAnimations
     int speed = 0; // delay(speed) every loop
     int sensitivity = 800;
     int colorLoopSpeed = 20; // hue+=1 every Xms
+    bool willIncrementColor = false;
+    uint8_t colorIncrementer = 0;
 
     uint8_t frequencyMode[7] = {0, 1, 2, 3, 4, 5, 6};
 
@@ -47,6 +49,8 @@ class AmbientBeatsLEDAnimations
     int setAnimation(int animationNumber);
     int nextFrequencyMode();
     int previousFrequencyMode();
+
+    void runColorLoop();
     bool toggleColorLoop();
 
     virtual int runAnimation() = 0;

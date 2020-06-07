@@ -65,6 +65,21 @@ bool AmbientBeatsLEDAnimations::toggleColorLoop() {
   return colorLoopOn;
 }
 
+void AmbientBeatsLEDAnimations::runColorLoop() {
+    if (colorLoopOn) {
+      EVERY_N_MILLISECONDS( 1 ) {
+        colorIncrementer++;
+        if (colorIncrementer % colorLoopSpeed == 0) {
+          willIncrementColor = true;
+        }
+      }
+      if (willIncrementColor) {
+        hue = wrapToRange(hue+1, 0, 255);
+        willIncrementColor = false;
+      }
+    }
+}
+
 int AmbientBeatsLEDAnimations::nextFrequencyMode() {
     int wrapEnd = frequencyMode[6];
     for (int i = 6; i > 0; i--) {
